@@ -170,7 +170,8 @@ print_featureplots <- function(obj, cell_type = deparse(substitute(obj)), featur
 }
 
 # Function used to plot uLIPSTIC signal (HTO) over UMAP.
-print_hto_featureplot <- function(obj, cell_type = deparse(substitute(obj)), cols = c("lightgrey","darkgreen")){
+print_hto_featureplot <- function(obj, cell_type = deparse(substitute(obj)), cols = c("lightgrey","darkgreen"),
+                                  max.cutoff = 300, order = TRUE, pt.size = 2, alpha = 1){
   
   working_dir <- getwd()
   new_dir <- paste(working_dir,"/",cell_type, sep = "")
@@ -182,8 +183,8 @@ print_hto_featureplot <- function(obj, cell_type = deparse(substitute(obj)), col
   filename = paste(cell_type, "_cells_hto_featureplots.pdf", sep = "")
   pdf(filename)
   f <- "nCount_HTO"
-  toPlot <- FeaturePlot(obj, reduction = "umap", features = f, cols = cols, max.cutoff = 300, order = TRUE,
-                        pt.size = 2, alpha = 1)
+  toPlot <- FeaturePlot(obj, reduction = "umap", features = f, cols = cols, max.cutoff = max.cutoff, 
+                        order = order, pt.size = pt.size, alpha = alpha)
   print(toPlot)
   dev.off()
   
