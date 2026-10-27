@@ -1,6 +1,7 @@
-These RScripts contains code to run the published scRNA-seq/CITE-seq analyses from Parigi et al., 
-Nature Immunology (2026) on skin immune cells in contact with Sox9-expressing cells, as assessed
-by the uLIPSTIC technology. 
+README
+This repository contains RScripts with code to run the published scRNA-seq/CITE-seq analyses 
+from Parigi et al., Nature Immunology (2026) on skin immune cells in contact with 
+Sox9-expressing cells, as assessed by the uLIPSTIC technology. 
 
 "SMP_scRNAseq_object_processing.R" contains the analyses used for figures, and draws from the 
 functions written in "SMP_scRNAseq_object_processing_functions.R".
