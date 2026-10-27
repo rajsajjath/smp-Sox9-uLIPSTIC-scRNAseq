@@ -46,7 +46,7 @@ features <- c("Cd3e","Cd4","Cd8a","Foxp3","Klrd1","Itgam","Cd207",
               "H2ab1","Lgals3")
 features <- sort(features)
 
-# Plot features. Used in Fig. 2a,b; Fig. 4a; Fig. 5a; Fig. S3a, S3b; Fig.S6c; Fig. S7C.
+# Plot features. Used in Fig. 3a,b; Fig. 5a; Fig. 6a; Fig. S3a, S3b; Fig.S6c; Fig. S7C.
 print_featureplots(obj = obj, cell_type = "all", features = features,
                    pt.size = 1, alpha = 0.8, order = TRUE, cols = c("lightgrey","darkred"),
                    assay = "SCT")
@@ -135,17 +135,17 @@ obj <- readRDS("immune/DETC/DETC_Seurat_object.rds")
 obj <- FindClusters(obj, resolution = 0.6, random.seed = 1) # Recluster DETCs.
 saveRDS(obj, file = "immune/DETC/DETC_Seurat_object_final.rds")
 
-# Used in Fig. 1f.
+# Used in Fig. 2a.
 p <- DimPlot(obj, pt.size = 2, alpha = 1)
 print(p)
 dev.off()
 
-# Used in Fig. 1g.
+# Used in Fig. 2b.
 print_hto_featureplot(obj = detc, cell_type = "DETC")
 
-# Used in Fig. 1j; Fig. S3C.
+# Used in Fig. 2e; Fig. S3C.
 features <- c("Ltb","Xcl1","Areg","Lag3","Lta")
 print_featureplots(obj = detc, cell_type = "DETC", features = features)
 
-# Used in Fig. 1i.
+# Used in Fig. 2d.
 corr_hto(obj = detc, cell_type = "DETC")
