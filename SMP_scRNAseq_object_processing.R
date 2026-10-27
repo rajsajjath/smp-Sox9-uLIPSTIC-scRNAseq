@@ -34,7 +34,7 @@ colnames(obj@meta.data)[13] <- "Ji-Dung_RNA_snn_res.0.5"
 colnames(obj@meta.data)[14] <- "Ji-Dung_seurat_clusters"
 
 # Prepare Seurat object on all cells.
-source("~/Documents/Research/FuchsLab/RScripts/SMP_scRNAseq_object_processing_functions.R") # 
+source("~/Documents/Research/FuchsLab/RScripts/SMP_scRNAseq_object_processing_functions.R")
 obj <- seurat_init(obj = obj, cell_type = "all", dims = 30, resolution = 0.1, saveRDS = TRUE) # Used for all downstream
 obj <- readRDS("~/Documents/Research/FuchsLab/Martina_10xscRNA/scSeq_LipsticTelo_reCal_20220224/SCT_v1/all/all_Seurat_object.rds")
 obj <- FindClusters(obj, resolution = 0.5)
